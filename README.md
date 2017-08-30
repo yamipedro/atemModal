@@ -1,2 +1,2 @@
-# atemModal
+# Atem Modal
 Simples modal

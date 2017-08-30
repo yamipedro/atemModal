@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="atemModal.css">
+    <script src="atemModal.js"></script>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <h1>AtemModal</h1>
+        <p>Modal simples utilizando jQuery e Bootstrap.</p>
+        <h1>Exemplos</h1>
+        <button class="btn btn-default" onclick="show_modal('default', 'Modal Default')">Modal Default</button>
+        <button class="btn btn-primary" onclick="show_modal('primary', 'Modal Primary')">Modal Primary</button>
+        <button class="btn btn-success" onclick="show_modal('success', 'Modal Success')">Modal Success</button>
+        <button class="btn btn-warning" onclick="show_modal('warning', 'Modal Warning')">Modal Warning</button>
+        <button class="btn btn-danger" onclick="show_modal('danger', 'Modal Danger')">Modal Danger</button>
+    </div>
+
+    <script>
+        function show_modal(type, text) {
+            atemModal.setTheme('atemModal_'+type);
+            atemModal.modal(text, 'Conteudo do '+text, [
+                {
+                    text: 'Voltar',
+                    type: 'btn-'+type,
+                    onclick: function() { atemModal.closeModal() }
+                }
+            ], true);
+        }
+    </script>
+
+</body>
+</html>
